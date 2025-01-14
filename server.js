@@ -48,8 +48,16 @@ io.on('connection', (socket) => {
   });
 });
 
+
+// server testing 
+app.get("/about", (req,res) => {
+   res.status(200).send("About Page")
+})
+
 // Start the server
 const PORT = 3001;
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+server.listen(PORT,'0.0.0.0' ,() => {
+  console.log(`Server running on http://127.0.0.1:${PORT}`);
 });
+
+
