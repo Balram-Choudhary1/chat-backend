@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -54,10 +54,17 @@ app.get("/about", (req,res) => {
    res.status(200).send("About Page")
 })
 
+app.use(express.static('public')); // Serve files from the "public" folder
+
+
 // Start the server
-const PORT = 3001;
-server.listen(PORT,'0.0.0.0' ,() => {
-  console.log(`Server running on http://127.0.0.1:${PORT}`);
+// const PORT = 3001;
+// server.listen(PORT,'0.0.0.0' ,() => {
+//   console.log(`Server running on http://127.0.0.1:${PORT}`);
+// });
+
+
+const PORT = process.env.PORT || 3000 ;
+server.listen(PORT, '0.0.0.0',() => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-
