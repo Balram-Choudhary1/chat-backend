@@ -64,7 +64,7 @@ app.use(express.static('public')); // Serve files from the "public" folder
 // });
 
 
-const PORT = process.env.PORT || 3000 ;
+const PORT = process.env.PORT || 10000 ;
 server.listen(PORT, '0.0.0.0',() => {
   console.log(`Server running on port ${PORT}`);
 });
